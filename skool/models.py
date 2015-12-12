@@ -13,8 +13,8 @@ class Faculty(models.Model):
 	DOB = models.DateField()
 	salary = models.PositiveIntegerField()
 
-	def __unicode__(self):
-		return u'%s' % self.name
+	# def __unicode__(self):
+	# 	return u'%s' % self.name
 
 class Department(models.Model):
 	name = models.CharField(max_length=64)
