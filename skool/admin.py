@@ -10,7 +10,15 @@ class FacultyAdmin(admin.ModelAdmin):
     #actions = [make_published]
     search_fields = ['name']
 
+class StudentAdmin(admin.ModelAdmin):
+	list_display = ['roll_no', 'first_name', 'standard','email']
+	ordering = ['roll_no']
+	search_fields = ['first_name','roll_no']
+
+class DepartmentAdmin(admin.ModelAdmin):
+	list_display = ['name', 'code', 'HOD']
+
 admin.site.register(UserProfile)
-admin.site.register(Department)
+admin.site.register(Department,DepartmentAdmin)
 admin.site.register(Faculty, FacultyAdmin)
-admin.site.register(Student)
+admin.site.register(Student,StudentAdmin)
