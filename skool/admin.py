@@ -18,7 +18,13 @@ class StudentAdmin(admin.ModelAdmin):
 class DepartmentAdmin(admin.ModelAdmin):
 	list_display = ['name', 'code', 'HOD']
 
-admin.site.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+	search_fields = ['user__username']
+	list_display = ['user', 'is_student', 'is_faculty']
+	ordering = ['is_student','is_faculty']
+
+
+admin.site.register(UserProfile,UserProfileAdmin)
 admin.site.register(Department,DepartmentAdmin)
 admin.site.register(Faculty, FacultyAdmin)
 admin.site.register(Student,StudentAdmin)
