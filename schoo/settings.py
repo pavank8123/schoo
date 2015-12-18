@@ -49,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'schoo.urls'
@@ -64,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -104,3 +106,13 @@ STATIC_URL = '/static/'
 
 #AUTH_USER_MODEL = 'skool.CustomUser'
 AUTH_PROFILE_MODEL = 'skool.UserProfile'
+
+ugettext = lambda s: s
+LANGUAGES = (
+    ('en', ugettext('English')),
+    ('nl', ugettext('Dutch')),
+    ('zh-hans', ugettext('Simplified Chinese')),
+)
+
+LOCALE_PATHS = (
+    BASE_DIR + '/locale', )

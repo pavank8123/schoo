@@ -13,10 +13,16 @@ class Faculty(models.Model):
 	DOB = models.DateField()
 	salary = models.PositiveIntegerField()
 
+	def __str__(self):
+		return '%s' %self.name
+
 class Department(models.Model):
 	name = models.CharField(max_length=64)
 	code = models.CharField(max_length=5)
 	HOD = models.ForeignKey('Faculty', related_name='hod')
+
+	def __str__(self):
+		return '%s' %self.name
 
 class Student(models.Model):
 	roll_no = models.PositiveIntegerField(db_index=True)
@@ -32,11 +38,17 @@ class Student(models.Model):
 	mobile = models.CharField(max_length=10,db_index=True)
 	department = models.ForeignKey('Department', related_name='department')
 
+	def __str__(self):
+		return '%s %s' %(self.first_name, self.last_name)
+
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)
 	is_student = models.BooleanField(default=False)
 	is_faculty = models.BooleanField(default=False)
+
+	def __str__(self):
+		return '%s' %self.user
 
 
 	def create_student_profile(sender,**kwargs):

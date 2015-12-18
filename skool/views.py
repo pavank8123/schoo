@@ -18,7 +18,7 @@ def login_user(request):
 			if user.is_active:
 				login(request, user)
 				args['username'] = username
-				return HttpResponseRedirect("home/")
+				return HttpResponseRedirect("/home/")
 		else:
 			args['username'] = username
 			return render(request,'login.html',args)

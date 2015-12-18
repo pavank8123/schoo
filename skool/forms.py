@@ -1,0 +1,1 @@
+from skool.models import Department, Faculty, Student
