@@ -9,23 +9,24 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-21 11:52+0000\n"
-"PO-Revision-Date: 2015-12-21 09:18+0000\n"
+"PO-Revision-Date: 2015-12-21 11:53+0000\n"
 "Last-Translator:   <pavan.konakandla@qvantel.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.7.8\n"
 
 #: templates/home.html:17
 msgid "Welcome"
-msgstr ""
+msgstr "Ben arrivata"
 
 #: templates/home.html:18
 msgid "This is the title"
-msgstr ""
+msgstr "Questo è il titolo"
 
 #: templates/home.html:21
 msgid "LOGOUT"
-msgstr ""
+msgstr "DISCONNETTERSI"

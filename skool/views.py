@@ -13,7 +13,6 @@ def login_user(request):
 		username = request.POST.get('username','')
 		password = request.POST.get('password','')
 		user = authenticate(username=username, password=password)
-		print user
 		if user is not None:
 			if user.is_active:
 				login(request, user)
@@ -23,6 +22,8 @@ def login_user(request):
 			args['username'] = username
 			return render(request,'login.html',args)
 
+	elif request.user.is_authenticated and request.user.is_active:
+		return HttpResponseRedirect("/home/")
 	else:
 		return render(request,'login.html',args)
 
@@ -34,7 +35,6 @@ def logout_user(request):
 
 @login_required(login_url='/')
 def home(request):
-	print 'here'
 	args={}
 	args['username'] = request.user
 	return render(request,'home.html',args)

@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'skool',
+    'rosetta',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,9 +110,7 @@ AUTH_PROFILE_MODEL = 'skool.UserProfile'
 
 ugettext = lambda s: s
 LANGUAGES = (
-    ('en', ugettext('English')),
-    ('nl', ugettext('Dutch')),
-    ('zh-hans', ugettext('Simplified Chinese')),
+    ('de', 'German'), ('fr', 'French'), ('it', 'Italian'), ('en', 'English'),
 )
 
 LOCALE_PATHS = (
