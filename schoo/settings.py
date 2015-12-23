@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$6ypd$ws8kxw24veg_doc&mc^^z_#vk)hcs1ozgrrnc9x-2loa'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -108,10 +109,17 @@ STATIC_URL = '/static/'
 #AUTH_USER_MODEL = 'skool.CustomUser'
 AUTH_PROFILE_MODEL = 'skool.UserProfile'
 
-ugettext = lambda s: s
 LANGUAGES = (
     ('de', 'German'), ('fr', 'French'), ('it', 'Italian'), ('en', 'English'),
 )
 
 LOCALE_PATHS = (
     BASE_DIR + '/locale', )
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "skool/static"),
+)
+
+STATIC_ROOT = 'static'
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
