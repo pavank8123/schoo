@@ -25,7 +25,7 @@ SECRET_KEY = '$6ypd$ws8kxw24veg_doc&mc^^z_#vk)hcs1ozgrrnc9x-2loa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -121,5 +121,3 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = 'static'
-
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']

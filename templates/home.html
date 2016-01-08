@@ -1,21 +1,15 @@
+{% include 'base.html' %}
 {% load i18n %}
 
-<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-    <input name="next" type="hidden" value="{{ redirect_to}}" />
-    <select name="language" onchange='this.form.submit()'>
-        {% get_current_language as LANGUAGE_CODE %}
-        {% get_available_languages as LANGUAGES %}
-        {% get_language_info_list for LANGUAGES as languages %}
-        {% for language in languages %}
-            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                {{ language.name }}
-            </option>
-        {% endfor %}
-    </select>
-</form>
+{% block title %}
+    <title>Home</title>
+{% endblock title %}
 
-{% trans "Welcome" %} {{ username }}
-{% trans "This is the title" as the_title %}
+{% block content %}
+    {% trans "Welcome" %} {{ username }}
+    {% trans "This is the title" as the_title %}
 
-<title>{{ the_title }}</title>
-<a href='/logout/'>{% trans "LOGOUT" %}</a>
+    <title>{{ the_title }}</title>
+    <a href='/logout/'>{% trans "LOGOUT" %}</a>
+{% endblock content%}
+
